@@ -1,24 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D)/*, typeof(PlayerMovement)*/)]
+[RequireComponent(typeof(SphereCollider), typeof(PlayerMovement))]
 public class PlayerInteractionController : MonoBehaviour
 {
-    [SerializeField] private float interactionRange;
+    [SerializeField] private float interactionRange = 2.5f;
 
-    [SerializeField] private CircleCollider2D interactionZone;
+    [Header("Debug")]
+    [SerializeField] private SphereCollider interactionZone;
     [SerializeField] private Interactable interactableInRange;
     [SerializeField] private GameObject interactionUI;
 
     private void OnValidate()
     {
-        GetComponent<CircleCollider2D>().radius = interactionRange;
+        GetComponent<SphereCollider>().radius = interactionRange;
     }
 
     private void Awake()
     {
-        interactionZone = GetComponent<CircleCollider2D>();
+        interactionZone = GetComponent<SphereCollider>();
         interactionZone.isTrigger = true;
 
         interactionUI = GameObject.Find("Interaction UI"); // ToDo: replace "Find"
@@ -29,13 +28,13 @@ public class PlayerInteractionController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) InteractWithInteractableInRange(); // TESTING
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.TryGetComponent(out interactableInRange)) return;
         if (interactionUI) interactionUI.SetActive(true);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         interactableInRange = null;
 
