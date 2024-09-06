@@ -7,7 +7,7 @@ public class AudioPlayer : MonoBehaviour
 {
     [Header("AudioPlayer"), SerializeField] private AudioClip voicelineToPlay;
 
-    protected UnityEvent onAudioEndedEvent;
+    protected UnityEvent onAudioEndedEvent = new();
 
     private AudioSource audioSource;
 

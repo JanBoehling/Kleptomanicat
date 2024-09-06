@@ -1,31 +1,27 @@
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(SphereCollider), typeof(PlayerMovement))]
-public class PlayerInteractionController : MonoBehaviour
+public class PlayerInteractionController : MonoSingleton<PlayerInteractionController>
 {
     [SerializeField] private float interactionRange = 2.5f;
-
-    [Header("Debug")]
-    [SerializeField] private SphereCollider interactionZone;
-    [SerializeField] private Interactable interactableInRange;
     [SerializeField] private GameObject interactionUI;
+
+    [SerializeField, Header("Debug")] private Interactable interactableInRange;
+
+    private SphereCollider interactionZone;
 
     private void OnValidate()
     {
         GetComponent<SphereCollider>().radius = interactionRange;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         interactionZone = GetComponent<SphereCollider>();
         interactionZone.isTrigger = true;
-
-        interactionUI = GameObject.Find("Interaction UI"); // ToDo: replace "Find"
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E)) InteractWithInteractableInRange(); // TESTING
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +37,7 @@ public class PlayerInteractionController : MonoBehaviour
         if (interactionUI) interactionUI.SetActive(false);
     }
 
-    public void InteractWithInteractableInRange()
+    public void InteractWithInteractableInRange(CallbackContext ctx)
     {
         if (!interactableInRange) return;
 

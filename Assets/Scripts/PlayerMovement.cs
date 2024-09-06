@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoSingleton<PlayerMovement>
 {
     enum MoveDirectionEnum
     {
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private int _spriteIterator = 0;
     private float _spriteChangeTimer = 0;
 
-    private void Awake()
+    protected override void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
     }
