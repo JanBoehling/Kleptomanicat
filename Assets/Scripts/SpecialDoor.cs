@@ -4,7 +4,7 @@ public class SpecialDoor : Interactable
 {
     [Header("SpecialDoor"), SerializeField] private AudioClip onUnlockVoiceline;
 
-    private bool hasKey;
+    [SerializeField] private bool hasKey;
 
     public override void Interact()
     {
