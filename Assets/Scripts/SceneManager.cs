@@ -10,7 +10,7 @@ public class SceneManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(link))
         {
-            Debug.LogWarning("Could not open link as there was no link set.");
+            Debug.LogWarning($"{GetType()}: Could not open link as there was no link set.");
             return;
         }
 

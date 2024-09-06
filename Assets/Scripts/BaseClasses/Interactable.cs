@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Collider), typeof(SpriteRenderer))]
 public abstract class Interactable : AudioPlayer
@@ -8,17 +9,21 @@ public abstract class Interactable : AudioPlayer
 
     protected UnityEvent OnInteractEvent;
     
-    private GameObject previewImageCanvas;
+    private GameObject itemPreviewCanvas;
+    private Image itemPreviewImage;
+    private Button itemTakeButton;
 
     protected override void Awake()
     {
         base.Awake();
-        previewImageCanvas = GameObject.Find("Preview Image Canvas"); // ToDo: replace "find"
+        itemPreviewCanvas = GameObject.Find("ItemPreviewCanvas");
+        if (itemPreviewCanvas) itemPreviewImage = itemPreviewCanvas.transform.Find("ItemPreviewImage").GetComponent<Image>();
+        if (itemPreviewCanvas) itemTakeButton = itemPreviewCanvas.transform.Find("TakeButton").GetComponent<Button>();
     }
 
     public virtual void Interact()
     {
-        Debug.Log($"Interacting with {name}");
+        Debug.Log($"{GetType()}: Interacting with {name}");
 
         ShowPreviewImage();
 
@@ -30,9 +35,11 @@ public abstract class Interactable : AudioPlayer
     private void ShowPreviewImage()
     {
         // If preview image is set, shows preview image canvas object
-        if (!previewImage || !previewImageCanvas) return;
+        if (!previewImage || !itemPreviewCanvas) return;
 
-        previewImageCanvas.transform.GetComponentInChildren<SpriteRenderer>().sprite = previewImage; // ToDo: replace "GetComponentInChildren"
-        previewImageCanvas.SetActive(true);
+        itemPreviewImage.sprite = previewImage;
+        itemTakeButton.onClick.AddListener(null); // ToDo: add call to inventory system
+        itemTakeButton.onClick.AddListener(itemTakeButton.onClick.RemoveAllListeners);
+        itemPreviewCanvas.SetActive(true);
     }
 }

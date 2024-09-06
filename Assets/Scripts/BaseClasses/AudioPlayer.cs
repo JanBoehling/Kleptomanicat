@@ -21,7 +21,7 @@ public class AudioPlayer : MonoBehaviour
         // Plays voice line when interacting
         if (!voicelineToPlay)
         {
-            Debug.LogWarning($"No audio clip set on object {name}");
+            Debug.LogWarning($"{GetType()}: No audio clip set on object {name}");
             return;
         }
         
@@ -33,7 +33,7 @@ public class AudioPlayer : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
 
-        Debug.Log($"Playing {clip}");
+        Debug.Log($"{GetType()}: Playing {clip}");
 
         yield return new WaitForSeconds(audioSource.clip.length);
 
