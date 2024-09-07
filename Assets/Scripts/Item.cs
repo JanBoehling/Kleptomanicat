@@ -6,7 +6,7 @@ public class Item : Interactable
 {
     [Header("Item"), SerializeField, Tooltip("If set, opens preview image instead of collecting it directly.")] private Sprite previewImage;
     [SerializeField] private int itemID = -1;
-    [SerializeField, Range(0, 100)] private uint itemValue;
+    [SerializeField, Range(0, 100000000)] private uint itemValue;
 
     private Canvas itemPreviewCanvas;
     private Image itemPreviewImage;
