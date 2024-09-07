@@ -38,7 +38,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     private void Update()
     {
-        _rigidBody.MovePosition(transform.position + new Vector3(_moveInputVector.x, 0, _moveInputVector.y) * _movementSpeed * Time.deltaTime);
+        transform.position += (_movementSpeed * Time.deltaTime * new Vector3(_moveInputVector.x, 0, _moveInputVector.y));
 
         _spriteChangeTimer += Time.deltaTime;
         if(_spriteChangeTimer >= _spriteChangeTime)
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     public void Move(CallbackContext ctx)
     {
-        _moveInputVector = ctx.ReadValue<Vector2>();
+        _moveInputVector = ctx.ReadValue<Vector2>().normalized;
 
         if(_moveInputVector == Vector2.zero)
         {

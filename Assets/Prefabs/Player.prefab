@@ -321,6 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsCollected: 0000000000000000000000
+  onAllItemsCollectedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1562841556250047325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95b9e7716f722d4c94dd160f1ec8e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 2.5
+  interactionRange: 1
   interactionUI: {fileID: 0}
   interactableInRange: {fileID: 0}
 --- !u!1 &3654687687439975369
