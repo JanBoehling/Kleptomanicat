@@ -122,6 +122,94 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &198453242
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 830638439182958353, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989856428998650260, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: m_Name
+      value: HahaReimgegeukt (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: itemTakeButton
+      value: 
+      objectReference: {fileID: 1787544871}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: voicelineToPlay
+      value: 
+      objectReference: {fileID: 8300000, guid: df7c560872ccd8b44b342d5b44a26d07, type: 3}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: itemPreviewImage
+      value: 
+      objectReference: {fileID: 1243263192}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: itemPreviewCanvas
+      value: 
+      objectReference: {fileID: 2078061186}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82fb17bb6fd9540438dc13c7f273b9dd, type: 3}
 --- !u!1001 &1159525892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +300,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1253240848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253240849}
+  - component: {fileID: 1253240852}
+  - component: {fileID: 1253240850}
+  m_Layer: 0
+  m_Name: SpecialDoor_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253240849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253240848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.388, y: 1.761, z: 0.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253240850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253240848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f452a77743add140a459e550c4bfc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voicelineToPlay: {fileID: 8300000, guid: a1b8f53394545d244b0efd09c10b161d, type: 3}
+  onlyTriggerOnce: 1
+--- !u!65 &1253240852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253240848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1346114176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1321,11 @@ PrefabInstance:
       objectReference: {fileID: 1787544871}
     - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
         type: 3}
+      propertyPath: voicelineToPlay
+      value: 
+      objectReference: {fileID: 8300000, guid: df7c560872ccd8b44b342d5b44a26d07, type: 3}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
       propertyPath: itemPreviewImage
       value: 
       objectReference: {fileID: 1243263192}
@@ -1189,4 +1350,6 @@ SceneRoots:
   - {fileID: 1461388099}
   - {fileID: 1159525892}
   - {fileID: 6862955197540282220}
+  - {fileID: 198453242}
   - {fileID: 2179216333127276499}
+  - {fileID: 1253240849}
