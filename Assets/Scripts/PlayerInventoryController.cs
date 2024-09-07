@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerInventoryController : MonoSingleton<PlayerInventoryController>
 {
     [SerializeField] private bool[] itemsCollected;
+
+    [SerializeField] private UnityEvent onAllItemsCollectedEvent;
 
     public void CollectItem(int itemID)
     {
@@ -17,5 +20,9 @@ public class PlayerInventoryController : MonoSingleton<PlayerInventoryController
         }
 
         itemsCollected[itemID] = true;
+
+        foreach (var item in itemsCollected) if (!item) return;
+
+        onAllItemsCollectedEvent?.Invoke();
     }
 }
