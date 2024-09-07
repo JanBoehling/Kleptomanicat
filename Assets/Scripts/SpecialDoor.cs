@@ -1,27 +1,34 @@
 using UnityEngine;
 
-public class SpecialDoor : Interactable
+public class SpecialDoor : RoomTrigger
 {
-    [Header("SpecialDoor"), SerializeField] private AudioClip onUnlockVoiceline;
+    [Header("SpecialDoor")]
+    [SerializeField] private AudioClip onUnlockVoiceline;
+    [SerializeField] private AudioClip onGameEndVoiceline;
 
     [Header("Debug")]
     [SerializeField] private bool hasKey;
 
-    public override void Interact()
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (!hasKey) return;
+        base.OnTriggerEnter(other);
 
-        base.Interact();
-
-        Application.Quit(69); //ToDo: implement end game stuff
+        if (hasKey) CuriousEnding();
     }
 
     public void UnlockDoor()
     {
         hasKey = true;
 
-        onAudioEndedEvent.AddListener(null); // ToDo: call end game stuff here
-
         StartCoroutine(PlayAudio(onUnlockVoiceline));
+    }
+
+    private void CuriousEnding()
+    {
+        Debug.LogWarning($"{GetType()}: Game Ending not implemented yet");
+
+        StartCoroutine(PlayAudio(onGameEndVoiceline));
+
+
     }
 }

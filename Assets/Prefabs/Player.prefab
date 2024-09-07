@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 900347266991893665}
   - component: {fileID: 187126801790341193}
   - component: {fileID: 1562841556250047325}
+  - component: {fileID: 4842727008050236938}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -99,7 +100,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -338,7 +339,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionRange: 1
   interactionUI: {fileID: 0}
-  interactableInRange: {fileID: 0}
+  e: {fileID: 21300000, guid: bb232cb483c85e5498dd468bb3fb7168, type: 3}
+  E: {fileID: 21300000, guid: 04974876c7b4ec4478e5b9cdef59c402, type: 3}
+  memeInteractionButtonChance: 10
+--- !u!114 &4842727008050236938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125252390856274776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671fc8d81b13e7140b31c39e43e7ad36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressionClips: []
+  currentClip: 0
+  audioPlayer: {fileID: 0}
 --- !u!1 &3654687687439975369
 GameObject:
   m_ObjectHideFlags: 0

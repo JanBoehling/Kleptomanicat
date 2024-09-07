@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(PlayerMovement))]
@@ -7,7 +8,13 @@ public class PlayerInteractionController : MonoSingleton<PlayerInteractionContro
     [SerializeField] private float interactionRange = 2.5f;
     [SerializeField] private GameObject interactionUI;
 
-    [SerializeField, Header("Debug")] private Interactable interactableInRange;
+    [Header("Interaction Button")]
+    [SerializeField] private Sprite e;
+    [SerializeField] private Sprite E;
+    [SerializeField, Range(0, 100)] private int memeInteractionButtonChance;
+    private bool interactionUIOpen;
+
+    private Interactable interactableInRange;
 
     protected override void Awake()
     {
@@ -17,6 +24,7 @@ public class PlayerInteractionController : MonoSingleton<PlayerInteractionContro
     private void Update()
     {
         interactableInRange = null;
+        bool interactableFound = false;
 
         float smallestRange = float.MaxValue;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, interactionRange);
@@ -27,28 +35,32 @@ public class PlayerInteractionController : MonoSingleton<PlayerInteractionContro
                 continue;
 
             float range = (hitColliders[i].transform.position - transform.position).magnitude;
-            if(range < smallestRange)
+            if (range < smallestRange)
             {
                 smallestRange = range;
                 interactableInRange = interactable;
             }
+
+            interactableFound = true;
         }
 
-        interactionUI.SetActive(interactableInRange);
+        if (interactableFound && !interactionUIOpen) OpenInteractionUI();
+        else if (!interactableFound)
+        {
+            interactionUI.SetActive(false);
+            interactionUIOpen = false;
+        }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (!other.TryGetComponent(out interactableInRange)) return;
-    //    if (interactionUI) interactionUI.SetActive(true);
-    //}
-    //
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    interactableInRange = null;
-    //
-    //    if (interactionUI) interactionUI.SetActive(false);
-    //}
+    private void OpenInteractionUI()
+    {
+        interactionUIOpen = true;
+
+        int rnd = Random.Range(0, 100) + 1;
+
+        interactionUI.SetActive(true);
+        interactionUI.transform.GetChild(0).GetComponent<Image>().sprite = rnd <= memeInteractionButtonChance ? E : e;
+    }
 
     public void InteractWithInteractableInRange(CallbackContext ctx)
     {

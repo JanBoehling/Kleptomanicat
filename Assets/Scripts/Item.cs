@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -9,10 +10,11 @@ public class Item : Interactable
     [SerializeField] private int itemID = -1;
     [SerializeField] private string itemName = "Item";
     [SerializeField, Range(0, 100000000)] private uint itemValue;
+    [SerializeField] private UnityEvent onItemTakeEvent;
 
     private Canvas itemPreviewCanvas;
     private Image itemPreviewImage;
-    private Button itemTakeButton;
+    protected Button itemTakeButton;
     private TextMeshProUGUI itemPreviewTmp;
 
     protected override void Awake()
@@ -28,7 +30,7 @@ public class Item : Interactable
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         OnInteractEvent?.AddListener(ShowPreviewImage);
     }
@@ -48,8 +50,10 @@ public class Item : Interactable
         itemPreviewCanvas.enabled = true;
     }
 
-    private void OnItemInteraction()
+    protected virtual void OnItemInteraction()
     {
+        onItemTakeEvent?.Invoke();
+
         if (itemID > -1) PlayerInventoryController.Instance.CollectItem(itemID);
 
         itemPreviewCanvas.enabled = false;

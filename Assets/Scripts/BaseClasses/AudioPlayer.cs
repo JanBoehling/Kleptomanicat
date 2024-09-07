@@ -17,14 +17,7 @@ public class AudioPlayer : MonoBehaviour
 
     protected void PlayAudio()
     {
-        // Plays voice line when interacting
-        if (!voicelineToPlay)
-        {
-            Debug.LogWarning($"{GetType()}: No audio clip set on object {name}");
-            return;
-        }
-        
-        StartCoroutine(PlayAudio(voicelineToPlay));
+        if (voicelineToPlay) StartCoroutine(PlayAudio(voicelineToPlay));
     }
 
     protected IEnumerator PlayAudio(AudioClip clip)
