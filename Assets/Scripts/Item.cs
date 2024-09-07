@@ -7,10 +7,21 @@ public class Item : Interactable
     [Header("Item"), SerializeField, Tooltip("If set, opens preview image instead of collecting it directly.")] private Sprite previewImage;
     [SerializeField] private int itemID = -1;
 
-    [Header("")]
-    [SerializeField] private GameObject itemPreviewCanvas;
-    [SerializeField] private Image itemPreviewImage;
-    [SerializeField] private Button itemTakeButton;
+    private Canvas itemPreviewCanvas;
+    private Image itemPreviewImage;
+    private Button itemTakeButton;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        itemPreviewCanvas = GameObject.Find("ItemPreviewCanvas").GetComponent<Canvas>();
+        if (itemPreviewCanvas)
+        {
+            itemPreviewImage = itemPreviewCanvas.transform.GetChild(0).Find("ItemPreviewImage").GetComponent<Image>();
+            itemTakeButton = itemPreviewCanvas.transform.GetChild(0).Find("TakeButton").GetComponent<Button>();
+        }
+    }
 
     private void Start()
     {
@@ -24,14 +35,19 @@ public class Item : Interactable
 
         itemPreviewImage.sprite = previewImage;
 
-        itemTakeButton.onClick.AddListener(() => PlayerInventoryController.Instance.CollectItem(itemID));
-        itemTakeButton.onClick.AddListener(() => itemPreviewCanvas.SetActive(false));
-        itemTakeButton.onClick.AddListener(() => Destroy(gameObject));
-        itemTakeButton.onClick.AddListener(PlayerMovement.Instance.GetComponent<PlayerInput>().currentActionMap.Enable);
-        itemTakeButton.onClick.AddListener(itemTakeButton.onClick.RemoveAllListeners);
+        itemTakeButton.onClick.AddListener(OnItemInteraction);
 
         PlayerMovement.Instance.GetComponent<PlayerInput>().currentActionMap.Disable();
 
-        itemPreviewCanvas.SetActive(true);
+        itemPreviewCanvas.enabled = true;
+    }
+
+    private void OnItemInteraction()
+    {
+        PlayerInventoryController.Instance.CollectItem(itemID);
+        itemPreviewCanvas.enabled = false;
+        Destroy(gameObject);
+        PlayerMovement.Instance.GetComponent<PlayerInput>().currentActionMap.Enable();
+        itemTakeButton.onClick.RemoveAllListeners();
     }
 }
