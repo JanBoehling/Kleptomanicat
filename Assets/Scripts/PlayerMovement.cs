@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerMovement : MonoSingleton<PlayerMovement>
@@ -141,5 +142,13 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
             default:
                 break;
         }
+    }
+
+    public void ToggleCurrentActionMap(bool value)
+    {
+        var playerInput = GetComponent<PlayerInput>();
+
+        if (value) playerInput.currentActionMap.Enable();
+        else playerInput.currentActionMap.Disable();
     }
 }
