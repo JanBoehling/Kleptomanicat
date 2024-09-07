@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static UnityEngine.InputSystem.InputAction;
 
@@ -65,6 +66,7 @@ public class PlayerInteractionController : MonoSingleton<PlayerInteractionContro
     public void InteractWithInteractableInRange(CallbackContext ctx)
     {
         if (!interactableInRange) return;
+        if (ctx.phase != InputActionPhase.Started) return;
 
         interactableInRange.Interact();
         interactableInRange = null;
