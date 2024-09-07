@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
 {
     [Header("AudioPlayer"), SerializeField] private AudioClip voicelineToPlay;
@@ -13,7 +12,7 @@ public class AudioPlayer : MonoBehaviour
 
     protected virtual void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        if (!PlayerMovement.Instance.TryGetComponent(out audioSource)) Debug.LogWarning($"{GetType()}: Could not fetch Audio Source component from player");
     }
 
     protected void PlayAudio()
