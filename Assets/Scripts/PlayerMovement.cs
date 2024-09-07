@@ -24,6 +24,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     private Vector2 _moveInputVector;
     private MoveDirectionEnum _moveDirection = MoveDirectionEnum.Stop;
+    private MoveDirectionEnum _lookDirection = MoveDirectionEnum.Right;
 
     private int _spriteIterator = 0;
     private float _spriteChangeTimer = 0;
@@ -77,11 +78,27 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
         if (nMoveDirection == _moveDirection)
             return;
 
-        if (nMoveDirection == MoveDirectionEnum.Left || _moveDirection == MoveDirectionEnum.Left)
+        if ((nMoveDirection == MoveDirectionEnum.Left && _lookDirection == MoveDirectionEnum.Right) ||
+            (nMoveDirection == MoveDirectionEnum.Right && _lookDirection == MoveDirectionEnum.Left))
         {
-            Vector3 scale = _spriteRenderer.transform.localScale;
-            scale.x *= -1;
-            _spriteRenderer.transform.localScale = scale;
+            if(_lookDirection == MoveDirectionEnum.Left)
+            {
+                Vector3 scale = _spriteRenderer.transform.localScale;
+                if(scale.x < 0)
+                    scale.x *= -1;
+                _spriteRenderer.transform.localScale = scale;
+
+                _lookDirection = MoveDirectionEnum.Right;
+            }
+            else if (_lookDirection == MoveDirectionEnum.Right)
+            {
+                Vector3 scale = _spriteRenderer.transform.localScale;
+                if (scale.x > 0)
+                    scale.x *= -1;
+                _spriteRenderer.transform.localScale = scale;
+
+                _lookDirection = MoveDirectionEnum.Left;
+            }
         }
 
         _spriteIterator = 0;

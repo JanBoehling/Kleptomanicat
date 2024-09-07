@@ -352,6 +352,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 900347266991893665, guid: 1424b218f81294a40a84b2581b00020a,
+        type: 3}
+      propertyPath: _movementSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1562841556250047325, guid: 1424b218f81294a40a84b2581b00020a,
         type: 3}
       propertyPath: interactionUI

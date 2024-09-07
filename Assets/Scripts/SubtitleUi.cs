@@ -11,8 +11,6 @@ public class SubtitleUi : MonoBehaviour
         Hidden, WriteText, SkipTextDisplay, WaitForInput
     }
 
-    public static SubtitleUi INSTANCE;
-
     [SerializeField] private float _timeBetweenChars = 0.1f;
     [SerializeField] private TextMeshProUGUI _displayTmp;
     [SerializeField] private Canvas _subtitleCanvas;
@@ -21,17 +19,6 @@ public class SubtitleUi : MonoBehaviour
     private int _displayTextIndex = 0;
     private float _betweenCharTimer = 0;
     private DisplayState _displayState = DisplayState.Hidden;
-
-    private void Awake()
-    {
-        if (INSTANCE != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        INSTANCE = this;
-    }
 
     private void Update()
     {
