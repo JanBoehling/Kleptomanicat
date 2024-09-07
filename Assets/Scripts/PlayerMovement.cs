@@ -16,7 +16,8 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
 
     [Header("Sprites")]
     [SerializeField] private Sprite _standingSprite;
-    [SerializeField] private Sprite[] _leftRightSprites;
+    [SerializeField] private Sprite[] _rightSprites;
+    [SerializeField] private Sprite[] _leftSprites;
     [SerializeField] private Sprite[] _upSprites;
     [SerializeField] private Sprite[] _downSprites;
 
@@ -132,10 +133,10 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
                 _spriteRenderer.sprite = _downSprites[iterator];
                 break;
             case MoveDirectionEnum.Left:
-                _spriteRenderer.sprite = _leftRightSprites[iterator];
+                _spriteRenderer.sprite = _leftSprites[iterator];
                 break;
             case MoveDirectionEnum.Right:
-                _spriteRenderer.sprite = _leftRightSprites[iterator];
+                _spriteRenderer.sprite = _rightSprites[iterator];
                 break;
             default:
                 break;
