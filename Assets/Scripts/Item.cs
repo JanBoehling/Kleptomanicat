@@ -6,6 +6,7 @@ public class Item : Interactable
 {
     [Header("Item"), SerializeField, Tooltip("If set, opens preview image instead of collecting it directly.")] private Sprite previewImage;
     [SerializeField] private int itemID = -1;
+    [SerializeField, Range(0, 100)] private uint itemValue;
 
     private Canvas itemPreviewCanvas;
     private Image itemPreviewImage;
@@ -46,8 +47,13 @@ public class Item : Interactable
     {
         PlayerInventoryController.Instance.CollectItem(itemID);
         itemPreviewCanvas.enabled = false;
+
+        PlayerMoneyController.Instance.AddMoney(itemValue);
+
         Destroy(gameObject);
+
         PlayerMovement.Instance.GetComponent<PlayerInput>().currentActionMap.Enable();
+
         itemTakeButton.onClick.RemoveAllListeners();
     }
 }
