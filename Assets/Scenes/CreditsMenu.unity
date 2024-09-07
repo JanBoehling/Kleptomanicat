@@ -694,7 +694,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://www.linkedin.com/in/darius-branning-b874451a6/
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &767629980
@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Darius
+  m_text: 'Darius Branning
 
     (Programming)'
   m_isRightToLeft: 0
