@@ -16,7 +16,7 @@ public class PlayerProgressionController : MonoSingleton<PlayerProgressionContro
     public void PlayNextClip()
     {
         if (currentClip >= progressionClips.Length) return;
-
+        
         audioPlayer.clip = progressionClips[currentClip];
         audioPlayer.Play();
 
