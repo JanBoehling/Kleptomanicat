@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 69cb2af35648c1b41acaed873296c86c
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/LevelBlockout.unity
+    guid: 6ce785bdb35e2a648b10b6fda77ed7a3
   - enabled: 1
     path: Assets/Scenes/CreditsMenu.unity
     guid: b6f240d6e6e0f7d4aaa8c60a8fa08e9a
