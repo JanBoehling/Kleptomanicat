@@ -50,7 +50,8 @@ public class Item : Interactable
 
     private void OnItemInteraction()
     {
-        PlayerInventoryController.Instance.CollectItem(itemID);
+        if (itemID > -1) PlayerInventoryController.Instance.CollectItem(itemID);
+
         itemPreviewCanvas.enabled = false;
 
         PlayerMoneyController.Instance.AddMoney(itemValue);
