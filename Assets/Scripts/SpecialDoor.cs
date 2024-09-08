@@ -78,6 +78,6 @@ public class SpecialDoor : RoomTrigger
     {
         yield return new WaitForSeconds(waitTimeToLoadNewScene);
 
-        sceneManager.LoadScene(2);
+        FindObjectOfType<CreditsMenuLoader>().ActivateNextScene();
     }
 }

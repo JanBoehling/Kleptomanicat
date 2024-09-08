@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreditsMenuLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private AsyncOperation loadingOperation = null;
+
+    private void Start()
     {
-        
+        loadingOperation = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(2);
+        loadingOperation.allowSceneActivation = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void ActivateNextScene() => loadingOperation.allowSceneActivation = true;
 }
