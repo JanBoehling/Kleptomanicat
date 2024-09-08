@@ -214,7 +214,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://www.artstation.com/dimitrios-kelesidis
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &99522990
@@ -708,7 +708,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: https://www.linkedin.com/in/eugen-janke-b415503b
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &574115024
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eugen
+  m_text: 'Eugen Janke
 
     (Art)'
   m_isRightToLeft: 0
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dimitri
+  m_text: 'Dimitrios Kelesidis
 
     (Art)'
   m_isRightToLeft: 0
