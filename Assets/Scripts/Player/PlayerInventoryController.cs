@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +8,22 @@ public class PlayerInventoryController : MonoSingleton<PlayerInventoryController
     [SerializeField] private bool[] itemsCollected;
 
     [SerializeField] private UnityEvent onAllItemsCollectedEvent;
+
+    private int itemCount;
+    private TMP_Text itemCountDisplay;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        itemCountDisplay = GameObject.Find("ItemText (TMP)").GetComponent<TMP_Text>();
+        if (!itemCountDisplay) Debug.LogWarning($"{GetType()}: Could not fetch item count display text object.");
+    }
+
+    private void Start()
+    {
+        itemCount = itemsCollected.Length;
+        itemCountDisplay.text = itemCount.ToString();
+    }
 
     public void CollectItem(int itemID)
     {
@@ -20,6 +36,8 @@ public class PlayerInventoryController : MonoSingleton<PlayerInventoryController
         }
 
         itemsCollected[itemID] = true;
+
+        itemCountDisplay.text = (--itemCount).ToString();
 
         foreach (var item in itemsCollected) if (!item) return;
 
