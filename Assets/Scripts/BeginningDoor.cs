@@ -26,7 +26,7 @@ public class BeginningDoor : AudioPlayer
         player.GetComponent<PlayerInput>().currentActionMap.Disable();
         PlayAudio();
 
-        StartCoroutine(LoadSceneAfterWaitTime());
+        onAudioEndedEvent.AddListener(() => StartCoroutine(LoadSceneAfterWaitTime()));
     }
 
     private IEnumerator LoadSceneAfterWaitTime()

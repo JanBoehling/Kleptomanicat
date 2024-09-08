@@ -42,7 +42,7 @@ public class SpecialDoor : RoomTrigger
 
         endingTimer += Time.deltaTime;
 
-        float progress = endingTimer / waitTimeToLoadNewScene;
+        float progress = endingTimer / onGameEndVoiceline.length;
         filmGrain.intensity.value = Mathf.Lerp(0, 1, progress);
         lensDistortion.intensity.value = Mathf.Lerp(0, 1, progress);
         colorAdjustments.saturation.value = Mathf.Lerp(0, -100, progress);
@@ -70,9 +70,8 @@ public class SpecialDoor : RoomTrigger
         PlayerMovement.Instance.GetComponent<PlayerInput>().currentActionMap.Disable();
         StartCoroutine(PlayAudio(onGameEndVoiceline));
 
-        StartCoroutine(LoadSceneAfterWaitTime());
-
         doEnding = true;
+        onAudioEndedEvent.AddListener(() => StartCoroutine(LoadSceneAfterWaitTime()));
     }
 
     private IEnumerator LoadSceneAfterWaitTime()

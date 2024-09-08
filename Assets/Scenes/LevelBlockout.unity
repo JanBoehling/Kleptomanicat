@@ -8595,7 +8595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voicelineToPlay: {fileID: 8300000, guid: 5887067227097a8448d684b845180f31, type: 3}
-  waitTimeToLoadNewScene: 4
+  waitTimeToLoadNewScene: 1
 --- !u!1 &500650468
 GameObject:
   m_ObjectHideFlags: 0
@@ -23768,7 +23768,7 @@ MonoBehaviour:
       m_Calls: []
   onUnlockVoiceline: {fileID: 0}
   onGameEndVoiceline: {fileID: 8300000, guid: 0a8cb34050ffdae4d87862741c461006, type: 3}
-  waitTimeToLoadNewScene: 6
+  waitTimeToLoadNewScene: 1
   hasKey: 0
 --- !u!65 &1589985770
 BoxCollider:
@@ -31676,7 +31676,7 @@ Transform:
   m_GameObject: {fileID: 2033068142}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4809508, y: -0.5183497, z: 0.5183496, w: 0.4809508}
-  m_LocalPosition: {x: 1.9, y: 0.01, z: 0.1}
+  m_LocalPosition: {x: -0.191, y: 0.01, z: 1.87}
   m_LocalScale: {x: 6.73, y: 6.730001, z: 6.730001}
   m_ConstrainProportionsScale: 1
   m_Children: []
