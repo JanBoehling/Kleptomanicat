@@ -125,7 +125,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
         switch (direction)
         {
             case MoveDirectionEnum.Stop:
-                _spriteRenderer.sprite = _standingSprite;
+                _spriteRenderer.sprite = _lookDirection == MoveDirectionEnum.Right ? _standingSprite : _leftSprites[1];
                 break;
             case MoveDirectionEnum.Up:
                 _spriteRenderer.sprite = _upSprites[iterator];
