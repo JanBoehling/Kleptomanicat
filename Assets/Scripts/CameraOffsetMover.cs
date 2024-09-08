@@ -5,31 +5,37 @@ using static UnityEngine.GraphicsBuffer;
 public class CameraOffsetMover : MonoBehaviour
 {
     [SerializeField, Tooltip("The time in seconds, the camera needs to catch up to the target"), Range(0f, 1f)] private float smoothTime = .25f;
+    [SerializeField] private Vector3 offset = new(0, 3.5f, -3f);
+    [SerializeField, Range(0, 100)] private float fov = 30f;
+
     private Vector2 velocity;
 
     private Transform player;
+    private Camera cam;
+
+    private void OnValidate()
+    {
+        GetComponent<Camera>().fieldOfView = fov;
+    }
 
     private void Awake()
     {
         player = PlayerMovement.Instance.transform;
+        cam = GetComponent<Camera>();
     }
 
     private void Start()
     {
-        GetComponent<Camera>().fieldOfView = 30f;
-
-        var pos = transform.position;
-        pos.y = 3.5f;
-        transform.position = pos;
+        cam.fieldOfView = fov;
     }
 
     private void Update()
     {
         transform.position = new Vector3()
         {
-            x = Mathf.SmoothDamp(transform.position.x, player.position.x, ref velocity.x, smoothTime),
-            y = 3.5f,
-            z = Mathf.SmoothDamp(transform.position.z, player.position.z - 3, ref velocity.y, smoothTime)
+            x = Mathf.SmoothDamp(transform.position.x, player.position.x + offset.x, ref velocity.x, smoothTime),
+            y = offset.y,
+            z = Mathf.SmoothDamp(transform.position.z, player.position.z + offset.z, ref velocity.y, smoothTime)
         };
     }
 }
