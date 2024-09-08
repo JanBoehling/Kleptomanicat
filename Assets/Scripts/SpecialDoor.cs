@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class SpecialDoor : RoomTrigger
@@ -13,13 +15,37 @@ public class SpecialDoor : RoomTrigger
     [Header("Debug")]
     [SerializeField] private bool hasKey;
 
+    private Volume volume;
+    private FilmGrain filmGrain;
+    private LensDistortion lensDistortion;
+    private ColorAdjustments colorAdjustments;
     private SceneManager sceneManager;
+
+    private bool doEnding = false;
+    private float endingTimer = 0;
 
     protected override void Awake()
     {
         base.Awake();
 
         sceneManager = FindObjectOfType<SceneManager>();
+        volume = FindObjectOfType<Volume>();
+        volume.profile.TryGet(out filmGrain);
+        volume.profile.TryGet(out lensDistortion);
+        volume.profile.TryGet(out colorAdjustments);
+    }
+
+    private void Update()
+    {
+        if (!doEnding)
+            return;
+
+        endingTimer += Time.deltaTime;
+
+        float progress = endingTimer / waitTimeToLoadNewScene;
+        filmGrain.intensity.value = Mathf.Lerp(0, 1, progress);
+        lensDistortion.intensity.value = Mathf.Lerp(0, 1, progress);
+        colorAdjustments.saturation.value = Mathf.Lerp(0, -100, progress);
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -45,6 +71,8 @@ public class SpecialDoor : RoomTrigger
         StartCoroutine(PlayAudio(onGameEndVoiceline));
 
         StartCoroutine(LoadSceneAfterWaitTime());
+
+        doEnding = true;
     }
 
     private IEnumerator LoadSceneAfterWaitTime()

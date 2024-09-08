@@ -14,6 +14,7 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
     [SerializeField] private float _movementSpeed = 1;
     [SerializeField] private float _spriteChangeTime = 0.3f;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private AudioSource _stepAudioSource;
 
     [Header("Sprites")]
     [SerializeField] private Sprite _standingSprite;
@@ -45,6 +46,9 @@ public class PlayerMovement : MonoSingleton<PlayerMovement>
         {
             _spriteChangeTimer = 0;
             SetSprite(_moveDirection);
+
+            if(_moveDirection != MoveDirectionEnum.Stop && _spriteIterator % 2 == 0)
+                _stepAudioSource.Play();
         }
     }
 
