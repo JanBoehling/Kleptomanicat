@@ -1465,7 +1465,12 @@ PrefabInstance:
     - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
         type: 3}
       propertyPath: itemName
-      value: 
+      value: Haha Reimgegeukt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
+        type: 3}
+      propertyPath: itemValue
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 82fb17bb6fd9540438dc13c7f273b9dd,
         type: 3}
@@ -2482,6 +2487,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 9063cef8c632cdb4bb8c5f4404844a8d,
+        type: 3}
+      propertyPath: itemName
+      value: "Italienische M\xFCtze"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 9063cef8c632cdb4bb8c5f4404844a8d,
+        type: 3}
+      propertyPath: itemValue
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 9063cef8c632cdb4bb8c5f4404844a8d,
         type: 3}
@@ -4030,7 +4045,7 @@ PrefabInstance:
     - target: {fileID: 7850093945719961295, guid: 685ea94386d396647a7b8476b6376802,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.675
+      value: 0.089
       objectReference: {fileID: 0}
     - target: {fileID: 7850093945719961295, guid: 685ea94386d396647a7b8476b6376802,
         type: 3}
@@ -6747,6 +6762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 850a5f5f13efdfa4987e515a55d45d4c,
         type: 3}
+      propertyPath: itemValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 850a5f5f13efdfa4987e515a55d45d4c,
+        type: 3}
       propertyPath: OnInteractEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -7628,6 +7648,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 3130cfe7ff0bbba42ad089e04a87a215,
+        type: 3}
+      propertyPath: itemName
+      value: S
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 3130cfe7ff0bbba42ad089e04a87a215,
         type: 3}
@@ -8955,6 +8980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemName
       value: Katzenminze
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: d21db6b61504c9549ade000dd428d73f,
+        type: 3}
+      propertyPath: itemValue
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: d21db6b61504c9549ade000dd428d73f,
         type: 3}
@@ -15208,6 +15238,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 8e62d5dc1618f6a43823db5852980b9a,
         type: 3}
+      propertyPath: itemName
+      value: Brechstange
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 8e62d5dc1618f6a43823db5852980b9a,
+        type: 3}
+      propertyPath: itemValue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 8e62d5dc1618f6a43823db5852980b9a,
+        type: 3}
       propertyPath: onItemTakeEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -16699,6 +16739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemName
       value: Shoiny
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: fe75880828870a14a99ca63e94976695,
+        type: 3}
+      propertyPath: itemValue
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: fe75880828870a14a99ca63e94976695,
         type: 3}
@@ -18267,6 +18312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: a6a3caef620f90545a7f3945d1bf5db7,
         type: 3}
+      propertyPath: itemValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: a6a3caef620f90545a7f3945d1bf5db7,
+        type: 3}
       propertyPath: onItemTakeEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -18937,6 +18987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemName
       value: Zensur
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: cd274d1351c4926489b2d6acf661b1a3,
+        type: 3}
+      propertyPath: itemValue
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: cd274d1351c4926489b2d6acf661b1a3,
         type: 3}
@@ -20031,6 +20086,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 5827e2b2fc5bf794995855689e56e471,
+        type: 3}
+      propertyPath: itemName
+      value: Zwiebelring
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 5827e2b2fc5bf794995855689e56e471,
+        type: 3}
+      propertyPath: itemValue
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: 5827e2b2fc5bf794995855689e56e471,
         type: 3}
@@ -21974,6 +22039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemName
       value: "Staubh\xE4schen"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: c04b9abcd81d9494aa78cda3333e2850,
+        type: 3}
+      propertyPath: itemValue
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: c04b9abcd81d9494aa78cda3333e2850,
         type: 3}
@@ -24697,6 +24767,11 @@ PrefabInstance:
       propertyPath: itemName
       value: Snek
       objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: 99cf294792225284c8bb349bd1200b84,
+        type: 3}
+      propertyPath: itemValue
+      value: 21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -24955,6 +25030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: itemName
       value: Spinne
+      objectReference: {fileID: 0}
+    - target: {fileID: 6459887673135882875, guid: a945c778dfc74b94889877547c1701f9,
+        type: 3}
+      propertyPath: itemValue
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6459887673135882875, guid: a945c778dfc74b94889877547c1701f9,
         type: 3}
@@ -28321,12 +28401,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa92ce5935f83bd4c83f04f3af7eaed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsCollected: 0000000000000000000000
+  itemsCollected: 00000000000000000000000000
   onAllItemsCollectedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3936738349575539457, guid: 1424b218f81294a40a84b2581b00020a,
-          type: 3}
+      - m_Target: {fileID: 3936738348629788579}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
